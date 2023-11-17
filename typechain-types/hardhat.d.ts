@@ -14,10 +14,6 @@ import * as Contracts from ".";
 declare module "hardhat/types/runtime" {
   interface HardhatEthersHelpers extends HardhatEthersHelpersBase {
     getContractFactory(
-      name: "WrapperFCLWebAuthn",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.WrapperFCLWebAuthn__factory>;
-    getContractFactory(
       name: "GnosisSafeProxy",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.GnosisSafeProxy__factory>;
@@ -37,32 +33,7 @@ declare module "hardhat/types/runtime" {
       name: "Lock",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.Lock__factory>;
-    getContractFactory(
-      name: "P256Signer",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.P256Signer__factory>;
-    getContractFactory(
-      name: "P256SignerFactory",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.P256SignerFactory__factory>;
-    getContractFactory(
-      name: "FCL_Elliptic_ZZ",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.FCL_Elliptic_ZZ__factory>;
-    getContractFactory(
-      name: "FCL_WebAuthn",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.FCL_WebAuthn__factory>;
-    getContractFactory(
-      name: "LibClone",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.LibClone__factory>;
 
-    getContractAt(
-      name: "WrapperFCLWebAuthn",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.WrapperFCLWebAuthn>;
     getContractAt(
       name: "GnosisSafeProxy",
       address: string | ethers.Addressable,
@@ -88,36 +59,7 @@ declare module "hardhat/types/runtime" {
       address: string | ethers.Addressable,
       signer?: ethers.Signer
     ): Promise<Contracts.Lock>;
-    getContractAt(
-      name: "P256Signer",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.P256Signer>;
-    getContractAt(
-      name: "P256SignerFactory",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.P256SignerFactory>;
-    getContractAt(
-      name: "FCL_Elliptic_ZZ",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.FCL_Elliptic_ZZ>;
-    getContractAt(
-      name: "FCL_WebAuthn",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.FCL_WebAuthn>;
-    getContractAt(
-      name: "LibClone",
-      address: string | ethers.Addressable,
-      signer?: ethers.Signer
-    ): Promise<Contracts.LibClone>;
 
-    deployContract(
-      name: "WrapperFCLWebAuthn",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.WrapperFCLWebAuthn>;
     deployContract(
       name: "GnosisSafeProxy",
       signerOrOptions?: ethers.Signer | DeployContractOptions
@@ -138,32 +80,7 @@ declare module "hardhat/types/runtime" {
       name: "Lock",
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.Lock>;
-    deployContract(
-      name: "P256Signer",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.P256Signer>;
-    deployContract(
-      name: "P256SignerFactory",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.P256SignerFactory>;
-    deployContract(
-      name: "FCL_Elliptic_ZZ",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.FCL_Elliptic_ZZ>;
-    deployContract(
-      name: "FCL_WebAuthn",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.FCL_WebAuthn>;
-    deployContract(
-      name: "LibClone",
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.LibClone>;
 
-    deployContract(
-      name: "WrapperFCLWebAuthn",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.WrapperFCLWebAuthn>;
     deployContract(
       name: "GnosisSafeProxy",
       args: any[],
@@ -189,31 +106,6 @@ declare module "hardhat/types/runtime" {
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.Lock>;
-    deployContract(
-      name: "P256Signer",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.P256Signer>;
-    deployContract(
-      name: "P256SignerFactory",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.P256SignerFactory>;
-    deployContract(
-      name: "FCL_Elliptic_ZZ",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.FCL_Elliptic_ZZ>;
-    deployContract(
-      name: "FCL_WebAuthn",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.FCL_WebAuthn>;
-    deployContract(
-      name: "LibClone",
-      args: any[],
-      signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.LibClone>;
 
     // default types
     getContractFactory(
