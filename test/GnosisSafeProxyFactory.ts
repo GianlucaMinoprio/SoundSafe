@@ -1,6 +1,6 @@
-/*import {ethers} from 'ethers';
+import {ethers} from 'ethers';
 
-import { GnosisSafeProxyFactory } from './your-contract-artifacts'; // Replace with the actual path to your contract artifacts
+import { GnosisSafeProxyFactory } from '../'; // Replace with the actual path to your contract artifacts
 
 async function deployContract() {
     // Connect to Ethereum using ethers.js
@@ -21,4 +21,3 @@ async function deployContract() {
 
 // Uncomment the following line to deploy the contract
 // deployContract();
-*/

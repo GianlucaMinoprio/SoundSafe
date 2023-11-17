@@ -1,4 +1,4 @@
-/*import {ethers} from 'ethers';
+import {ethers} from 'ethers';
 //test case
 
 
@@ -23,4 +23,3 @@ async function deployContract() {
 
 // Uncomment the following line to deploy the contract
 // deployContract();
-*/
