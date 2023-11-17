@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "@infura/sdk": "^2.4.3",
+    "ethers": "^6.8.1",
+    "hardhat": "^2.19.1",
+    "i": "^0.3.7"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "dotenv": "^16.3.1",
+    "typescript": "^5.2.2"
+  }
+}
