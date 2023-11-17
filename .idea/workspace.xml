@@ -5,13 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2fe6f34b-21fa-4648-870b-9cc9ecd1e9d2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/test/GnosisSafeProxy.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/GnosisSafeProxyFactory.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/deploy/deploy.js" beforeDir="false" afterPath="$PROJECT_DIR$/deploy/deploy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Lock.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/Lock.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Solidity Contract" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -58,7 +70,7 @@
       <workItem from="1700246659350" duration="1422000" />
       <workItem from="1700249709253" duration="346000" />
       <workItem from="1700250064238" duration="47000" />
-      <workItem from="1700250126600" duration="690000" />
+      <workItem from="1700250126600" duration="1691000" />
     </task>
     <servers />
   </component>
