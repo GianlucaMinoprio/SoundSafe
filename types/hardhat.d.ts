@@ -30,6 +30,10 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.MockERC20__factory>;
     getContractFactory(
+      name: "SwapModule",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.SwapModule__factory>;
+    getContractFactory(
       name: "TokenSwap",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.TokenSwap__factory>;
@@ -55,6 +59,11 @@ declare module "hardhat/types/runtime" {
       signer?: ethers.Signer
     ): Promise<Contracts.MockERC20>;
     getContractAt(
+      name: "SwapModule",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.SwapModule>;
+    getContractAt(
       name: "TokenSwap",
       address: string | ethers.Addressable,
       signer?: ethers.Signer
@@ -77,6 +86,10 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.MockERC20>;
     deployContract(
+      name: "SwapModule",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.SwapModule>;
+    deployContract(
       name: "TokenSwap",
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.TokenSwap>;
@@ -101,6 +114,11 @@ declare module "hardhat/types/runtime" {
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.MockERC20>;
+    deployContract(
+      name: "SwapModule",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.SwapModule>;
     deployContract(
       name: "TokenSwap",
       args: any[],
