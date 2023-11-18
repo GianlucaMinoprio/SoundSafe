@@ -1,35 +1,28 @@
 import { ContractTransactionResponse, ethers } from "ethers";
-import gnosisSafeProxyFactoryAbi from "./abi/GnosisSafeProxyFactory";
+import gnosisSafeProxyAbi from "./abi/GnosisSafeProxy";
 import { sign } from "crypto";
 import dotenv from "dotenv";
 
 dotenv.config();
 
-let gnosisSafeProxyFactory: ethers.Contract | undefined = undefined;
+let gnosisSafeProxy: ethers.Contract | undefined = undefined;
 
-export function initGnosisSafeProxyFactory(
-  address: string,
-  wallet: ethers.Wallet
-) {
-  gnosisSafeProxyFactory = new ethers.Contract(
-    address,
-    gnosisSafeProxyFactoryAbi,
-    wallet
-  );
+export function initgnosisSafeProxy(address: string, wallet: ethers.Wallet) {
+  gnosisSafeProxy = new ethers.Contract(address, gnosisSafeProxyAbi, wallet);
 }
 
 export async function createSafeWallet(
   signerVerifierAddress: string
 ): Promise<ContractTransactionResponse> {
   const saltNonce = 42;
-  if (!gnosisSafeProxyFactory)
+  if (!gnosisSafeProxy)
     throw new Error("p256SignerFactory wasn't correctly initialized.");
 
   // Call the create function
   try {
     console.log("Deploying Safe contract...");
     const initCode = "0x";
-    const tx = await gnosisSafeProxyFactory.createProxyWithNonce(
+    const tx = await gnosisSafeProxy.createProxyWithNonce(
       signerVerifierAddress,
       initCode,
       saltNonce
@@ -59,5 +52,5 @@ const wallet: ethers.Wallet = new ethers.Wallet(
   provider
 );
 
-initGnosisSafeProxyFactory(SAFE_FACTORY_ADDRESS, wallet);
+initgnosisSafeProxy(SAFE_FACTORY_ADDRESS, wallet);
 createSafeWallet("0xB95Cc50F5f178251eF7e6b690d58cd62Cd37136c");
