@@ -1,36 +1,47 @@
-import { expect } from "chai";
-import { ethers } from "hardhat";
-import { Contract } from "ethers";
+import { ethers } from 'ethers';
+import dotenv from 'dotenv';
+import GnosisSafeProxy from '../artifacts/contracts/GnosisSafeProxy.sol/GnosisSafeProxy.json';
 
-describe("GnosisSafeProxyFactory Deployment", function () {
-    let factory: Contract;
+// Load environment variables from .env file
+dotenv.config();
 
-    before(async function () {
-        // Déployer le contrat factory
-        const Factory = await ethers.getContractFactory("GnosisSafeProxyFactory");
-        factory = await Factory.deploy();
-        await factory.deployed();
-    });
+async function deployContract() {
+    // Connect to Ethereum using ethers.js
+    const provider = new ethers.providers.JsonRpcProvider(process.env.RPC_ENDPOINT); // Use the environment variable
+    const wallet = new ethers.Wallet(process.env.PRIVATE_KEY, provider); // Use the environment variable
 
-    it("should deploy the factory successfully", async function () {
-        expect(factory.address).to.properAddress;
-    });
+    // Replace with the actual address of the GnosisSafeProxyFactory contract
+    const factoryAddress = process.env.FACTORY_ADDRESS;
 
-    it("should deploy a proxy contract", async function () {
-        // Remplacez par l'adresse du contrat logique et les données d'initialisation
-        const logicContractAddress = "0x..."; //FIXME
-        const initData = "0x..."; //FIXME
+    // Deploy GnosisSafeProxy contract using the factory
+    const factoryContract = new ethers.Contract(
+        factoryAddress,
+        GnosisSafeProxy.abi,
+        wallet
+    );
 
-        const tx = await factory.createProxy(logicContractAddress, initData);
-        const receipt = await tx.wait();
+    // Specify the target contract (singleton) address for GnosisSafeProxy
+    const targetContractAddress = 'YOUR_TARGET_CONTRACT_ADDRESS'; // Replace with the target contract address
 
-        // Supposons que l'événement ProxyCreation émet l'adresse du nouveau proxy
-        const event = receipt.events?.find(event => event.event === "ProxyCreation");
-        expect(event).to.not.be.undefined;
+    // Encode the constructor arguments for GnosisSafeProxy (target contract address)
+    const initData = ethers.utils.defaultAbiCoder.encode(['address'], [targetContractAddress]);
 
-        const proxyAddress = event?.args?.proxy;
-        expect(proxyAddress).to.properAddress;
-    });
+    // Deploy the GnosisSafeProxy contract
+    const deployTransaction = await factoryContract.deploymentTransaction(targetContractAddress, initData);
 
-    // Ajouter plus de tests au besoin
-});
+    // Wait for the deployment transaction to be mined
+    const receipt = await deployTransaction.wait();
+
+    console.log("factory:", factoryContract.address);
+
+    if (receipt.status === 1) {
+        // Transaction succeeded, get the deployed GnosisSafeProxy contract address
+        const proxyAddress = receipt.logs[0].address;
+        console.log('GnosisSafeProxy deployed at:', proxyAddress);
+    } else {
+        console.error('Failed to deploy GnosisSafeProxy.');
+    }
+}
+
+// Uncomment the following line to deploy the contract
+deployContract();

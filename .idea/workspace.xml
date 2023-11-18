@@ -5,55 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2fe6f34b-21fa-4648-870b-9cc9ecd1e9d2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/test/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/deploy_factory.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/deploy_master.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/avalanche/.chainId" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/avalanche/P256SignerFactory.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/avalanche/Webauthn.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/avalanche/solcInputs/5775f6fb0e5df41b1e0121d96a0fbccf.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/avalanche_production/.chainId" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/avalanche_production/P256SignerFactory.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/avalanche_production/Webauthn.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/avalanche_production/solcInputs/5775f6fb0e5df41b1e0121d96a0fbccf.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/chiado/.chainId" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/chiado/P256SignerFactory.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/chiado/Webauthn.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/chiado/solcInputs/5775f6fb0e5df41b1e0121d96a0fbccf.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/chiado_production/.chainId" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/chiado_production/P256SignerFactory.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/chiado_production/Webauthn.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/chiado_production/solcInputs/5775f6fb0e5df41b1e0121d96a0fbccf.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/fuji/.chainId" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/fuji/P256SignerFactory.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/fuji/Webauthn.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/fuji/solcInputs/5775f6fb0e5df41b1e0121d96a0fbccf.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/fuji_production/.chainId" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/fuji_production/P256SignerFactory.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/fuji_production/Webauthn.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/fuji_production/solcInputs/5775f6fb0e5df41b1e0121d96a0fbccf.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/muster_testnet/.chainId" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/muster_testnet/P256SignerFactory.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/muster_testnet/Webauthn.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/muster_testnet/solcInputs/5775f6fb0e5df41b1e0121d96a0fbccf.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/muster_testnet_production/.chainId" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/muster_testnet_production/P256SignerFactory.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/muster_testnet_production/Webauthn.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/muster_testnet_production/solcInputs/5775f6fb0e5df41b1e0121d96a0fbccf.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/muster_testnet_staging/.chainId" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/muster_testnet_staging/P256SignerFactory.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/muster_testnet_staging/Webauthn.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/muster_testnet_staging/solcInputs/5775f6fb0e5df41b1e0121d96a0fbccf.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/sepolia/.chainId" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/sepolia/P256SignerFactory.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/sepolia/Webauthn.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/sepolia/solcInputs/6042ecfe0b53aa2b92aa12519ad61dbc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/GnosisSafeProxy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/GnosisSafeProxy.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rebase/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rebase/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rebase/contracts/GnosisSafeProxy.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rebase/contracts/GnosisSafeProxyFactory.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rebase/contracts/IProxyCreationCallback.sol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rebase/deploy/deploy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rebase/hardhat.config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rebase/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rebase/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rebase/test/GnosisSafeProxy.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rebase/test/GnosisSafeProxyFactory.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rebase/test/deploy_test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rebase/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rebase/typechain.config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/DeployLogicContract.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/GnosisSafeProxy.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/test/GnosisSafeProxyFactory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/GnosisSafeProxyFactory.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/typechain-types/factories/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/typechain-types/factories/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/typechain-types/hardhat.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/typechain-types/hardhat.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/typechain-types/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/typechain-types/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/deploy_miteux.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_deploy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_deploy.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,22 +58,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;soli&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/tayron/Documents/SoundSafe&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/snap/intellij-idea-ultimate/462/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "contractWithInfura",
+    "last_opened_file_path": "/home/tayron/Documents/SoundSafe",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "ts.external.directory.path": "/snap/webstorm/345/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/scripts" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -114,6 +94,11 @@
       <workItem from="1700250064238" duration="47000" />
       <workItem from="1700250126600" duration="2736000" />
       <workItem from="1700253712701" duration="829000" />
+      <workItem from="1700263175042" duration="603000" />
+      <workItem from="1700263805367" duration="52000" />
+      <workItem from="1700263865299" duration="1688000" />
+      <workItem from="1700265562615" duration="2076000" />
+      <workItem from="1700274971557" duration="3664000" />
     </task>
     <servers />
   </component>
