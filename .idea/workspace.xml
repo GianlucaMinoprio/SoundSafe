@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fe6f34b-21fa-4648-870b-9cc9ecd1e9d2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/contracts/mockerc20.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/moduledeploy.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/deployModule.ts" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/deployModule.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
-    </list>
+    <list default="true" id="2fe6f34b-21fa-4648-870b-9cc9ecd1e9d2" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -87,7 +78,7 @@
       <workItem from="1700311775814" duration="420000" />
       <workItem from="1700312509618" duration="2948000" />
       <workItem from="1700316446029" duration="2225000" />
-      <workItem from="1700318724485" duration="872000" />
+      <workItem from="1700318724485" duration="1331000" />
     </task>
     <servers />
   </component>

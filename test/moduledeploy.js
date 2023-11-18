@@ -11,6 +11,6 @@ describe("Test", function () {
    });
 
    it ("Should deploy", async function () {
-      console.log( await erc.address);
+      console.log( await erc.getAddress());
    })
 });
