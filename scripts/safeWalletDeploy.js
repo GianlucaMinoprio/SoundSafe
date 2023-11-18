@@ -1,15 +1,18 @@
-const {
+/*const {
     SafeMultisigTransactionListResponse,
     SignatureResponse,
 } = require("@safe-global/api-kit");
-
+*/
+const {cdefault : SafeApiKit } = require("@safe-global/api-kit");
+const { default: Safe, EthersAdapter } = require("@safe-global/protocol-kit");
+/*
 const {
     Safe,
     EthersAdapter,
     SafeAccountConfig,
     SafeFactory,
 } = require("@safe-global/protocol-kit");
-
+*/
 const {
     SafeMultisigTransactionResponse,
     SafeTransaction,
