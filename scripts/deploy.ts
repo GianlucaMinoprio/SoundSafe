@@ -1,27 +1,13 @@
-import { ethers } from "hardhat";
+// scripts/deploy.ts
+import ethers from "ethers";
 
-async function main() {
-  const currentTimestampInSeconds = Math.round(Date.now() / 1000);
-  const unlockTime = currentTimestampInSeconds + 60;
+const INFURA_PROJECT_ID = process.env.INFURA_API_KEY || "";
+const PRIVATE_KEY = process.env.PRIVATE_KEY || "";
 
-  const lockedAmount = ethers.parseEther("0.001");
+const provider = new ethers.JsonRpcProvider(
+  `https://polygon-mumbai.infura.io/v3/${INFURA_PROJECT_ID}`
+);
 
-  const lock = await ethers.deployContract("Lock", [unlockTime], {
-    value: lockedAmount,
-  });
+const wallet = new ethers.Wallet(PRIVATE_KEY, provider);
 
-  await lock.waitForDeployment();
-
-  console.log(
-    `Lock with ${ethers.formatEther(
-      lockedAmount
-    )}ETH and unlock timestamp ${unlockTime} deployed to ${lock.target}`
-  );
-}
-
-// We recommend this pattern to be able to use async/await everywhere
-// and properly handle errors.
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
+console.log(`Wallet address: ${wallet.address}`);

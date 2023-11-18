@@ -20,9 +20,9 @@ import type {
   TypedLogDescription,
   TypedListener,
   TypedContractMethod,
-} from "../common";
+} from "../../common";
 
-export interface TokenSwapInterface extends Interface {
+export interface SafeModuleInterface extends Interface {
   getFunction(
     nameOrSignature:
       | "changeReceiverToken"
@@ -80,11 +80,11 @@ export namespace SwapRequiredEvent {
   export type LogDescription = TypedLogDescription<Event>;
 }
 
-export interface TokenSwap extends BaseContract {
-  connect(runner?: ContractRunner | null): TokenSwap;
+export interface SafeModule extends BaseContract {
+  connect(runner?: ContractRunner | null): SafeModule;
   waitForDeployment(): Promise<this>;
 
-  interface: TokenSwapInterface;
+  interface: SafeModuleInterface;
 
   queryFilter<TCEvent extends TypedContractEvent>(
     event: TCEvent,

@@ -1,50 +1,36 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.20;
+pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-// Import your SafeModule contract here if needed
-
-contract TokenSwap {
+contract TokenSwap  {
     address public owner;
-    IERC20 public token;
-    uint256 public tokenAmount;
+    IERC20 public ownerToken;
+    IERC20 public receiverToken;
 
-    event TokenSwapped(address _token, uint256 amount);
+    event SwapRequired(bool swapNeeded);
 
-    constructor(address _token) {
+    constructor(address _ownerTokenAddress, address _receiverTokenAddress) {
         owner = msg.sender;
-        token = IERC20(_token);
+        ownerToken = IERC20(_ownerTokenAddress);
+        receiverToken = IERC20(_receiverTokenAddress);
     }
 
     modifier onlyOwner() {
-        require(msg.sender == owner, "This is not the owner");
+        require(msg.sender == owner, "Only owner can call this function");
         _;
     }
 
-    function depositToken(uint256 amount) external onlyOwner {
-        require(amount > 0, "give a right amount");
-        require(token.transferFrom(msg.sender, address(this), amount), "Transfer failed bc of parameters");
-        tokenAmount += amount;
+    function checkSwapRequired() external onlyOwner {
+        bool swapNeeded = ownerToken != receiverToken;
+
+        emit SwapRequired(swapNeeded);
     }
 
-    function swapToken(uint256 amount) external {
-        require(amount > 0, "give a right amount");
-        require(tokenAmount >= amount, "Insufficient balance");
-        tokenAmount -= amount;
-        require(token.transfer(msg.sender, amount), "Transfer Failed");
-        emit TokenSwapped(msg.sender, amount);
+    function changeReceiverToken(address _newReceiverTokenAddress) external onlyOwner {
+        require(_newReceiverTokenAddress != address(0), "Invalid receiver token address");
+        receiverToken = IERC20(_newReceiverTokenAddress);
     }
 
-    function withdrawToken(address to, uint256 amount) external onlyOwner {
-        require(amount <= tokenAmount, "Not enough funds");
-        tokenAmount -= amount;
-        require(token.transfer(to, amount), "Transfer failed");
-    }
-
-    // You have commented out the 'destroy' function, but you can uncomment it if needed.
-    // function destroy() external onlyOwner {
-    //     selfdestruct(payable(owner));
-    // }
 }
