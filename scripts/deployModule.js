@@ -16,7 +16,7 @@ const deployModule = async (hre) => {
 deployModule.tags = ['Module'];
 
 async function main() {
-    const privateKey = process.env.PRIVATE_KEY;
+    //const privateKey = process.env.PRIVATE_KEY;
 
     const providerUrl = 'https://mainnet.infura.io/v3/' + process.env.INFURA_API_KEY;
     const provider = new ethers.JsonRpcProvider(providerUrl);
