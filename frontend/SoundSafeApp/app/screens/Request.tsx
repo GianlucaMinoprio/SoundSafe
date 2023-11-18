@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, TextInput } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, TextInput, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 
@@ -12,6 +12,13 @@ export const RequestScreen = () => {
   
   const navigation = useNavigation<StackNavigationProp<any>>();
 
+
+  const addrSafe = "0x1HDTD536DHG36HD73HDY37DH378H83" 
+
+  const apiUrl = `https://api.dicebear.com/7.x/shapes/png?seed=${addrSafe}`;
+
+
+
   const handleRequest = () => {
     // Implémentez la logique de demande ici
     console.log(`Requesting $${amount}`);
@@ -22,6 +29,14 @@ export const RequestScreen = () => {
 
   return (
     <View style={styles.container}>
+
+      <Image
+        source={{ uri: apiUrl }}
+        style={styles.avatarImage}
+      />
+      <Text style={styles.addrText}>{addrSafe}</Text>
+
+
       <Text style={styles.header}>request</Text>
       
       <View style={styles.amountContainer}>
@@ -86,5 +101,17 @@ const styles = StyleSheet.create({
   requestButtonText: {
     color: 'white', // Remplacez par la couleur de texte souhaitée
     fontSize: 18,
+  },
+  avatarImage: {
+    width: 100, // Ajustez selon la taille souhaitée
+    height: 100, // Ajustez selon la taille souhaitée
+    borderRadius: 50, // Cela rendra l'image circulaire
+    marginTop: 20, // Ajustez selon votre mise en page
+    marginBottom: 30, // Petit espace entre l'image et l'adresse
+  },
+  addrText: {
+    fontSize: 16, // Ajustez selon la taille souhaitée
+    color: 'black', // Ou une autre couleur de votre palette
+    marginBottom: 20, // Ajustez selon votre mise en page
   },
 });

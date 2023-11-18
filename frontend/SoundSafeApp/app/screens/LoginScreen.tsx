@@ -3,7 +3,17 @@ import { StyleSheet, View, TextInput, Button, Text, TouchableOpacity } from 'rea
 import { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
+import ReactNativeBiometrics from 'react-native-biometrics'
 
+
+  const biometricAuth = async () => {
+    const biometrics = new ReactNativeBiometrics();
+    const {success} = await biometrics.simplePrompt({
+      promptMessage: 'Confirmation',
+    });
+    return success;
+  }
+  
 
 
 
@@ -14,9 +24,10 @@ export const LoginScreen = () => {
 
 
 
-  const handleSignUp = () => {
+  const handleLogIn = async () => {
 
     // Verifier avec un Face ID 
+    await biometricAuth();
     
     console.log(name); // Affiche le nom dans la console
 
@@ -33,7 +44,7 @@ export const LoginScreen = () => {
         value={name}
         onChangeText={setName}
       />
-      <TouchableOpacity style={styles.button} onPress={handleSignUp}>
+      <TouchableOpacity style={styles.button} onPress={handleLogIn}>
         <Text style={styles.buttonText}>Go!</Text>
       </TouchableOpacity>
     </View>
