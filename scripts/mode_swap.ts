@@ -1,41 +1,42 @@
 import Web3 from 'web3';
-import { PrivateKeyProviderConnector, FusionSDK } from "@1inch/fusion-sdk";
+import {PrivateKeyProviderConnector, FusionSDK, NetworkEnum} from "@1inch/fusion-sdk";
+import {ethers} from "ethers";
+
 
 const makerPrivateKey = process.env.PRIVATE_KEY; // Remplacez par votre clé privée
-const makerAddress = "0x1A0cc861E781753D5bbC0FC11542c44b324b5927"; // Remplacez par votre adresse
 
-const nodeUrl = 'https://mainnet.infura.io/v3/' + process.env.INFURA_API_KEY; // Remplacez par votre URL de nœud
+const nodeUrl = 'https://polygon-mumbai.infura.io/v3/' + process.env.INFURA_API_KEY; // Remplacez par votre URL de nœud
 
 // Configuration du provider
 const blockchainProvider = new PrivateKeyProviderConnector(
     makerPrivateKey,
     new Web3(nodeUrl)
-);
+)
 
 // Initialisation du SDK Fusion
 const sdk = new FusionSDK({
     url: 'https://api.1inch.dev/fusion',
     network: 1,
     blockchainProvider,
-    authKey: 'your-auth-key' // Remplacez par votre clé d'authentification si nécessaire
+    authKey: process.env.INCH_API_KEY // Remplacez par votre clé d'authentification si nécessaire
 });
-/**
+
+/**t
  * Place un ordre de swap sur 1inch Fusion.
  * @param {string} amount Montant à échanger, en wei.
  */
-function placeSwapOrder(amount,fromAddress,toAddress) {
+function PlaceSwapOrder(amount : number,fromAddress : string,toAddress : string) {
+
     sdk.placeOrder({
         fromTokenAddress: fromAddress, //Adress d'origine
         toTokenAddress: toAddress, // Adresse cible
         amount: amount, // Utilisation du paramètre amount
-        walletAddress: makerAddress // Votre adresse de Safe Wallet
-    }).then(response => {
-        console.log(response); // Gérer la réponse
-    }).catch(error => {
-        console.error(error); // Gérer les erreurs
-    });
+        walletAddress: fromAddress,// Votre adresse de Safe Wallet
+        fee: {
+            takingFeeBps: 100, // 1% as we use bps format, 1% is equal to 100bps
+    })
 }
 
 // Exemple d'utilisation de la fonction
 const amountToSwap = '50000000000000000'; // 0.05 ETH, par exemple
-placeSwapOrder(amountToSwap, '0x000000' /* ETH */, '0x000000' /* DAI */);
+PlaceSwapOrder(amountToSwap, '0x000000' /* ETH */, '0x000000' /* DAI */);

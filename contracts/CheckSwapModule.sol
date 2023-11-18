@@ -4,17 +4,17 @@ pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract TokenSwap  {
+contract CheckSwap {
     address public owner;
     IERC20 public ownerToken;
     IERC20 public receiverToken;
 
     event SwapRequired(bool swapNeeded);
 
-    constructor(address _ownerTokenAddress, address _receiverTokenAddress) {
+    constructor(address _ownerTokenAddress) {
         owner = msg.sender;
         ownerToken = IERC20(_ownerTokenAddress);
-        receiverToken = IERC20(_receiverTokenAddress);
+        receiverToken = IERC20(address(receiverToken));
     }
 
     modifier onlyOwner() {
