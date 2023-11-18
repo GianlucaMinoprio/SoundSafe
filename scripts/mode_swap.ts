@@ -1,4 +1,4 @@
-import Web3 from 'ethers';
+import Web3 from 'web3';
 import { PrivateKeyProviderConnector, FusionSDK } from "@1inch/fusion-sdk";
 
 const makerPrivateKey = process.env.PRIVATE_KEY; // Remplacez par votre clé privée
@@ -19,7 +19,6 @@ const sdk = new FusionSDK({
     blockchainProvider,
     authKey: 'your-auth-key' // Remplacez par votre clé d'authentification si nécessaire
 });
-
 /**
  * Place un ordre de swap sur 1inch Fusion.
  * @param {string} amount Montant à échanger, en wei.
@@ -39,4 +38,4 @@ function placeSwapOrder(amount,fromAddress,toAddress) {
 
 // Exemple d'utilisation de la fonction
 const amountToSwap = '50000000000000000'; // 0.05 ETH, par exemple
-placeSwapOrder(amountToSwap);
+placeSwapOrder(amountToSwap, '0x000000' /* ETH */, '0x000000' /* DAI */);
