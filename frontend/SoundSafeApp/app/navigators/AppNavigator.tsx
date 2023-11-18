@@ -38,6 +38,10 @@ export type AppStackParamList = {
   Welcome: undefined
   Login: undefined // @demo remove-current-line
   Demo: NavigatorScreenParams<DemoTabParamList> // @demo remove-current-line
+  MainScreen: { name: string }; 
+  Request: { name: string };
+  SignUp: undefined;
+  Pay: undefined;
   // 🔥 Your screens go here
   // IGNITE_GENERATOR_ANCHOR_APP_STACK_PARAM_LIST
 }
@@ -66,23 +70,26 @@ const AppStack = observer(function AppStack() {
   return (
     <Stack.Navigator
       screenOptions={{ headerShown: false, navigationBarColor: colors.background }}
-      initialRouteName={isAuthenticated ? "Welcome" : "Login"} // @demo remove-current-line
+      initialRouteName={isAuthenticated ? "Login" : "SignUp"} // @demo remove-current-line
     >
       {/* @demo remove-block-start */}
       {isAuthenticated ? (
         <>
           {/* @demo remove-block-end */}
-          <Stack.Screen name="Welcome" component={Screens.WelcomeScreen} />
-          {/* @demo remove-block-start */}
-          <Stack.Screen name="Demo" component={DemoNavigator} />
+          <Stack.Screen name="Login" component={Screens.LoginScreen} />
         </>
       ) : (
         <>
-          <Stack.Screen name="Login" component={Screens.LoginScreen} />
+          <Stack.Screen name="SignUp" component={Screens.SignUpScreen} />
         </>
       )}
       {/* @demo remove-block-end */}
       {/** 🔥 Your screens go here */}
+
+      <Stack.Screen name="MainScreen" component={Screens.MainScreen} />
+      <Stack.Screen name="Request" component={Screens.RequestScreen} />
+      <Stack.Screen name="Pay" component={Screens.PayScreen} />
+
       {/* IGNITE_GENERATOR_ANCHOR_APP_STACK_SCREENS */}
     </Stack.Navigator>
   )

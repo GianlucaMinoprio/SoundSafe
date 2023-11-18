@@ -1,6 +1,10 @@
 export * from "./WelcomeScreen"
 // @demo remove-block-start
 export * from "./LoginScreen"
+export * from "./SignUpScreen"
+export * from "./MainScreen"
+export * from "./Request"
+export * from "./Pay"
 export * from "./DemoCommunityScreen"
 export * from "./DemoDebugScreen"
 export * from "./DemoShowroomScreen/DemoShowroomScreen"
