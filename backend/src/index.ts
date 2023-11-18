@@ -1,10 +1,10 @@
 import express, {Express} from 'express';
 import mysql from 'mysql2/promise';
-import {ContractTransactionResponse, ethers} from 'ethers';
+import {ethers} from 'ethers';
 
 import dotenv from 'dotenv';
-import {createSigner, initP256SignerFactory, listenForNewSigner} from "./p256signer/p256signer";
-import { initGnosisSafeProxyFactory } from './safe/safe_factory';
+import {initSafeModuleFactory, listenForNewSafeModules, deploySafeModule} from "./safe/safe_module_factory";
+import {createSafe,createSafeFactory} from "./safe/safe";
 dotenv.config();
 
 const app: Express = express();
@@ -26,13 +26,11 @@ if (!process.env.PRIVATE_KEY)
   throw new Error('No PRIVATE_KEY specified in the .env file !');
 if (!process.env.JSON_RPC_PROVIDER)
   throw new Error('No JSON_RPC_PROVIDER specified in the .env file !');
-if (!process.env.P256_SIGNER_FACTORY_ADDRESS)
-  throw new Error('No P256_SIGNER_FACTORY_ADDRESS provided in the .env file !')
-if (!process.env.SAFE_FACTORY_ADDRESS)
-  throw new Error('No SAFE_FACTORY_ADDRESS provided in the .env file !')
+if (!process.env.SAFE_MODULE_FACTORY_ADDRESS)
+  throw new Error('No SAFE_MODULE_FACTORY_ADDRESS provided in the .env file !')
 
 console.log(`Connecting to provider: ${process.env.JSON_RPC_PROVIDER}...`);
-const provider: ethers.JsonRpcProvider = new ethers.JsonRpcProvider(process.env.JSON_RPC_PROVIDER);
+const provider: ethers.providers.JsonRpcProvider = new ethers.providers.JsonRpcProvider(process.env.JSON_RPC_PROVIDER);
 console.log('Successfully initialized provider.\n');
 
 console.log('Creating the wallet...');
@@ -42,20 +40,18 @@ const wallet: ethers.Wallet = new ethers.Wallet(
 );
 console.log(`Successfully created wallet ('${wallet.address}').\n`);
 
-const P256_SIGNER_FACTORY_ADDRESS = process.env.P256_SIGNER_FACTORY_ADDRESS;
-console.log(`P256 SIGNER FACTORY ADDRESS: ${P256_SIGNER_FACTORY_ADDRESS}`);
+const SAFE_MODULE_FACTORY_ADDRESS = process.env.SAFE_MODULE_FACTORY_ADDRESS;
+console.log(`Safe Module Factory Address: ${SAFE_MODULE_FACTORY_ADDRESS}`);
 
-console.log('Initializing the P256 Signer Factory...');
-initP256SignerFactory(P256_SIGNER_FACTORY_ADDRESS, wallet);
-console.log('Successfully initialized the P256 Signer Factory.\n');
+console.log('Initializing the Safe Module Factory...');
+initSafeModuleFactory(SAFE_MODULE_FACTORY_ADDRESS, wallet);
+console.log('Successfully initialized the Safe Module Factory.\n');
 
 console.log('Initializing Safe Factory...');
-const SAFE_FACTORY_ADDRESS = process.env.SAFE_FACTORY_ADDRESS;
-console.log(`Safe Factory address: ${SAFE_FACTORY_ADDRESS}`);
+createSafeFactory(wallet)
+    .then(() => console.log('Successfully initialized the Safe Factory.\n'));
 
-console.log('Successfully initialized the Safe Factory.\n');
-
-listenForNewSigner(P256_SIGNER_FACTORY_ADDRESS, provider);
+listenForNewSafeModules(SAFE_MODULE_FACTORY_ADDRESS, provider);
 console.log('\n');
 // END  ----------------------------------------------------------------------------------------
 
@@ -87,11 +83,12 @@ app.post('/account/create', async (req, res) => {
   if (!hardware_pub)
     return res.status(400).send("Incorrect request parameters. Body should contain 'hardware_pub'.");
 
-  let verifier_address: string;
-  let safe_address: string = "SAFE ADDRESS";
+  let safe_address: string;
+  let module_address: string;
   try {
-    const ctx_res: ContractTransactionResponse = await createSigner(hardware_pub);
-    verifier_address = ctx_res.data;
+    let { safe, module } = await createSafe(wallet, hardware_pub)
+    safe_address = safe;
+    module_address = module;
   }
   catch (err) {
     console.error(err);
@@ -100,16 +97,16 @@ app.post('/account/create', async (req, res) => {
 
   try {
     await connection.execute('INSERT INTO user (hardware_pub, safe_address, verifier_address) VALUES (?, ?, ?)',
-        [hardware_pub, safe_address, verifier_address]);
+        [hardware_pub, safe_address, module_address]);
 
     console.log(`Created new user:
     HARDWARE PUBLIC KEY: ${hardware_pub}
-    VERIFIER ADDRESS   : ${verifier_address}
+    VERIFIER ADDRESS   : ${module_address}
     SAFE     ADDRESS   : ${safe_address}
     `);
     return res.status(200)
         .json({
-          verifier_address: verifier_address,
+          verifier_address: module_address,
           safe_address: safe_address
         });
   }
