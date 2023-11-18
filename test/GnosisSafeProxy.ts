@@ -1,6 +1,7 @@
-import { ethers } from 'ethers';
+import {ethers, getAddress} from 'ethers';
 import dotenv from 'dotenv';
 import GnosisSafeProxy from '../artifacts/contracts/GnosisSafeProxy.sol/GnosisSafeProxy.json';
+import {address} from "hardhat/internal/core/config/config-validation";
 
 // Load environment variables from .env file
 dotenv.config();
@@ -19,8 +20,8 @@ async function deployContract() {
 
     const factory = await factoryContract.deploy();
 
-    console.log('GnosisSafeProxy deployed at:', factory.address);
+    console.log('GnosisSafeProxy deployed at:', getAddress("GnosisSafeProxy"));
 }
 
 // Uncomment the following line to deploy the contract
-// deployContract();
+deployContract();

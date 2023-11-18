@@ -21,7 +21,9 @@ contract GnosisSafeProxy {
         require(_singleton != address(0), "Invalid singleton address provided");
         singleton = _singleton;
     }
-
+    receive() external payable {
+        // Logique optionnelle pour la réception d'ETH
+    }
     /// @dev Fallback function forwards all transactions and returns all received return data.
     fallback() external payable {
         // solhint-disable-next-line no-inline-assembly
@@ -40,5 +42,9 @@ contract GnosisSafeProxy {
             }
             return(0, returndatasize())
         }
+    }
+    function my_getAddress() public view returns (address)
+    {
+        return address(this);
     }
 }

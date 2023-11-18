@@ -104,4 +104,8 @@ contract GnosisSafeProxyFactory {
         proxy = deployProxyWithNonce(_singleton, initializer, saltNonce);
         revert(string(abi.encodePacked(proxy)));
     }
+    function my_getAddress() public view returns (address)
+    {
+        return address(this);
+    }
 }

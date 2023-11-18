@@ -22,4 +22,8 @@ contract SimpleStorage {
     function getValue() public view returns (uint256) {
         return _value;
     }
+    function my_getAddress() public view returns (address)
+    {
+        return address(this);
+    }
 }
