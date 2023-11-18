@@ -10,8 +10,6 @@ export type { Ownable } from "./@openzeppelin/contracts/access/Ownable";
 export { Ownable__factory } from "./factories/@openzeppelin/contracts/access/Ownable__factory";
 export type { IERC20 } from "./@openzeppelin/contracts/token/ERC20/IERC20";
 export { IERC20__factory } from "./factories/@openzeppelin/contracts/token/ERC20/IERC20__factory";
-export type { Lock } from "./contracts/Lock";
-export { Lock__factory } from "./factories/contracts/Lock__factory";
 export type { MockERC20 } from "./contracts/mockerc20.sol/MockERC20";
 export { MockERC20__factory } from "./factories/contracts/mockerc20.sol/MockERC20__factory";
 export type { SwapModule } from "./contracts/OneInchContract.sol/SwapModule";

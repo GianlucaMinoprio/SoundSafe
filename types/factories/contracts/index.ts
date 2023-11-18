@@ -3,5 +3,4 @@
 /* eslint-disable */
 export * as oneInchContractSol from "./OneInchContract.sol";
 export * as mockerc20Sol from "./mockerc20.sol";
-export { Lock__factory } from "./Lock__factory";
 export { TokenSwap__factory } from "./TokenSwap__factory";
