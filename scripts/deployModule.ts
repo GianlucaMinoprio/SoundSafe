@@ -17,7 +17,6 @@ deployModule.tags = ['Module'];
 
 async function main() {
 
-
     const contractABI = [
 
         {
