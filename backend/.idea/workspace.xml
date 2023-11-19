@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cae0f8de-20b6-4399-80db-a5da388f7e46" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/safe/abi/SafeModuleAbi.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/safe/abi/SafeModuleAbi.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/safe/abi/SafeModuleFactoryAbi.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/safe/abi/SafeModuleFactoryAbi.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2YJnRFWunDPeLkhZ6kiTMxcRiMu" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;backend__arthur&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.14.0&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.14.0&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/aderugy/Desktop/Work/SoundSafe/backend/src/safe_js&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/aderugy/Desktop/Work/SoundSafe/backend/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/safe_js" />
+      <recent name="$PROJECT_DIR$/src/p256-signer" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/safe" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cae0f8de-20b6-4399-80db-a5da388f7e46" name="Changes" comment="" />
+      <created>1700252539231</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1700252539231</updated>
+      <workItem from="1700252540264" duration="6837000" />
+      <workItem from="1700261449213" duration="4313000" />
+      <workItem from="1700303336897" duration="2749000" />
+      <workItem from="1700307889677" duration="6721000" />
+      <workItem from="1700318764423" duration="6651000" />
+      <workItem from="1700327765133" duration="5225000" />
+      <workItem from="1700342612287" duration="654000" />
+      <workItem from="1700343335768" duration="12910000" />
+      <workItem from="1700357542867" duration="2134000" />
+      <workItem from="1700364558066" duration="5377000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
