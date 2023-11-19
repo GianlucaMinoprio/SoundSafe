@@ -14,5 +14,5 @@ export type { MockERC20 } from "./contracts/mockerc20.sol/MockERC20";
 export { MockERC20__factory } from "./factories/contracts/mockerc20.sol/MockERC20__factory";
 export type { SwapModule } from "./contracts/OneInchContract.sol/SwapModule";
 export { SwapModule__factory } from "./factories/contracts/OneInchContract.sol/SwapModule__factory";
-export type { TokenSwap } from "./contracts/TokenSwap";
-export { TokenSwap__factory } from "./factories/contracts/TokenSwap__factory";
+export type { SafeModule } from "./contracts/swapContract.sol/SafeModule";
+export { SafeModule__factory } from "./factories/contracts/swapContract.sol/SafeModule__factory";

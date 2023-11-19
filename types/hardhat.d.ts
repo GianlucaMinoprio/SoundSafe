@@ -30,9 +30,9 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.SwapModule__factory>;
     getContractFactory(
-      name: "TokenSwap",
+      name: "SafeModule",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.TokenSwap__factory>;
+    ): Promise<Contracts.SafeModule__factory>;
 
     getContractAt(
       name: "Ownable",
@@ -55,10 +55,10 @@ declare module "hardhat/types/runtime" {
       signer?: ethers.Signer
     ): Promise<Contracts.SwapModule>;
     getContractAt(
-      name: "TokenSwap",
+      name: "SafeModule",
       address: string | ethers.Addressable,
       signer?: ethers.Signer
-    ): Promise<Contracts.TokenSwap>;
+    ): Promise<Contracts.SafeModule>;
 
     deployContract(
       name: "Ownable",
@@ -77,9 +77,9 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.SwapModule>;
     deployContract(
-      name: "TokenSwap",
+      name: "SafeModule",
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.TokenSwap>;
+    ): Promise<Contracts.SafeModule>;
 
     deployContract(
       name: "Ownable",
@@ -102,10 +102,10 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.SwapModule>;
     deployContract(
-      name: "TokenSwap",
+      name: "SafeModule",
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
-    ): Promise<Contracts.TokenSwap>;
+    ): Promise<Contracts.SafeModule>;
 
     // default types
     getContractFactory(
