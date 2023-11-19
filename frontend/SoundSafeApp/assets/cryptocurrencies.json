@@ -1,0 +1,47 @@
+[
+    {
+      "name": "USDT",
+      "TokenAd": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "icon": "usdt_icon"
+    },
+    {
+      "name": "EURC",
+      "TokenAd": "0x1aBaEA1f7C830bD89Acc67eC4af516284b1bC33c",
+      "icon": "eurc_icon"
+    },
+    {
+      "name": "Weth",
+      "TokenAd": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "icon": "weth_icon"
+    },
+    {
+      "name": "Polygon",
+      "TokenAd": "0x0000000000000000000000000000000000001010",
+      "icon": "polygon_icon"
+    },
+    {
+      "name": "Gnosis - XDAI",
+      "TokenAd": "0x9C58BAcC331c9aa871AFD802DB6379a98e80CEdb",
+      "icon": "gnosis_icon"
+    },
+    {
+      "name": "ApeCoin",
+      "TokenAd": "0x4d224452801aced8b2f0aebe155379bb5d594381",
+      "icon": "apecoin_icon"
+    },
+    {
+      "name": "FileCoin",
+      "TokenAd": "0x0D8Ce2A99Bb6e3B7Db580eD848240e4a0F9aE153",
+      "icon": "filecoin_icon"
+    },
+    {
+      "name": "Fuji",
+      "TokenAd": "0x15469F263f922ede058Cbf5C2744b4eB3dE3da9F",
+      "icon": "fuji_icon"
+    },
+    {
+      "name": "Sepolia",
+      "TokenAd": "0x1b44F3514812d835EB1BDB0acB33d3fA3351Ee43",
+      "icon": "ethereum_icon"
+    }
+]
