@@ -6,9 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="cae0f8de-20b6-4399-80db-a5da388f7e46" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/safe/abi/SafeModuleAbi.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/safe/abi/SafeModuleAbi.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/safe/abi/SafeModuleFactoryAbi.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/safe/abi/SafeModuleFactoryAbi.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/p256signer/abi/p256_signer_factory_abi.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/p256signer/p256signer.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/safe/safe.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/safe/safe.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/safe/safe_module_factory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/safe/safe_module_factory.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +21,6 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
-        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -34,27 +35,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;backend__arthur&quot;,
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.14.0&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.14.0&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/aderugy/Desktop/Work/SoundSafe/backend/src/safe_js&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/home/aderugy/Desktop/Work/SoundSafe/backend/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "backend__arthur",
+    "last_opened_file_path": "/home/aderugy/Desktop/Work/SoundSafe/backend/src/p256-signer",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "/home/aderugy/Desktop/Work/SoundSafe/backend/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/safe_js" />
       <recent name="$PROJECT_DIR$/src/p256-signer" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/safe" />
@@ -74,10 +72,6 @@
       <workItem from="1700307889677" duration="6721000" />
       <workItem from="1700318764423" duration="6651000" />
       <workItem from="1700327765133" duration="5225000" />
-      <workItem from="1700342612287" duration="654000" />
-      <workItem from="1700343335768" duration="12910000" />
-      <workItem from="1700357542867" duration="2134000" />
-      <workItem from="1700364558066" duration="5377000" />
     </task>
     <servers />
   </component>
