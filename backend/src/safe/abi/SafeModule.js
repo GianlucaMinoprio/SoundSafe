@@ -1,4 +1,6 @@
-export default [
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = [
     {
         "inputs": [],
         "stateMutability": "nonpayable",
@@ -162,4 +164,4 @@ export default [
         "stateMutability": "view",
         "type": "function"
     }
-]
+];
