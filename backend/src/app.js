@@ -161,7 +161,7 @@ function signMessage(message, privateKeyHex) {
     };
 }
 
-callVerifier("0xd5250168d9DBa4Ff5986d4a75216FBA20fB0406F");
-//main();
+//callVerifier("0xd5250168d9DBa4Ff5986d4a75216FBA20fB0406F");
+main();
 //console.log(keyPair.publicKey.length)
 //callVerifier("0x21DE47E9c3C5A32c9A2B4F3de3377eEA68CcD4f4")
