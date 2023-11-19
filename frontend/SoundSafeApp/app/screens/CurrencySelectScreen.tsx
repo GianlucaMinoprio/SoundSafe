@@ -20,13 +20,26 @@ export const CurrencySelectScreen = ({ route }) => {
   const getCurrencyIcon = (iconName) => {
     console.log(iconName)
     switch (iconName) {
-      case 'Ethereum':
-        return require('../../assets/icons/crypto/ethereum_icon.png');
+      case 'USDT':
+        return require('../../assets/icons/crypto/usdt_icon.png');
+      case 'EURC':
+        return require('../../assets/icons/crypto/eurc_icon.png');
+      case 'Weth':
+        return require('../../assets/icons/crypto/weth_icon.png');
       case 'Polygon':
         return require('../../assets/icons/crypto/polygon_icon.png');
-      case 'Gnosis':
+      case 'Gnosis - XDAI':
         return require('../../assets/icons/crypto/gnosis_icon.png');
-      // Vous devez ajouter des cas pour chaque icône que vous avez
+      case 'ApeCoin':
+        return require('../../assets/icons/crypto/apecoin_icon.png');
+      case 'FileCoin':
+        return require('../../assets/icons/crypto/filecoin_icon.png');
+      case 'Fuji':
+        return require('../../assets/icons/crypto/fuji_icon.png');
+      case 'Sepolia':
+        return require('../../assets/icons/crypto/ethereum_icon.png');
+
+
       default:
         return require('../../assets/icons/crypto/ethereum_icon.png');
     }
@@ -59,7 +72,7 @@ return (
         <FlatList
             data={cryptocurrencies}
             renderItem={renderItem}
-            keyExtractor={item => item.chainId}
+            keyExtractor={item => item.TokenAd}
         />
     </View>
 );

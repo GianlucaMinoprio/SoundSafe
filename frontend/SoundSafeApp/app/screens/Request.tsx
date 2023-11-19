@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import { Audio } from 'expo-av';
 import * as FileSystem from 'expo-file-system';
 import * as Permissions from 'expo-permissions';
+import { goBack } from 'app/navigators';
 
 export const RequestScreen = () => {
   const [amount, setAmount] = useState(10);
@@ -112,7 +113,7 @@ export const RequestScreen = () => {
         // Ajoutez un délai si nécessaire entre les lectures
       }
       // Après avoir joué le message 10 fois, naviguez vers 'Pay'
-      navigation.navigate('Pay');
+      goBack();
     } catch (error) {
       console.error(error);
     }
