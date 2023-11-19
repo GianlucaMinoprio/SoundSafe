@@ -15,27 +15,20 @@ it is Sound Safe!
 
 **Benefits:** The main benefit is that it is a secure way to send and receive cryptocurrency transactions. It is also a convenient way to send and receive cryptocurrency transactions. As the system work for around 20 centimeters, it is a good way to send and receive cryptocurrency transactions in a crowded place, and prevent it from attack, like man in the middle. 
 
-### Secure Enclave Integration //TODO 
-**Description:** Detail how the secure enclave technology is utilized across different mobile platforms.
-**Security Aspects:** Explain the security features, like encryption methods or protection against unauthorized access.
+### Secure Enclave Integration 
+**Description:** The application is using the Secure Enclave to store the private key. Thus, the private key is never stored in the application, and the user does not have to worry about it.
 
-### Facial Recognition as a Password //TODO 
-**Description:** 
+### Facial Recognition as a Password 
+**Description:** The application is using the facial recognition as a password. Thus, the user does not have to remember a password, and it is a secure way to access the application. 
 **User Experience:** The user experience is improved by the facial recognition technology, as it is an easy way to access the app, and create some data flawlessly.
 
-### Cryptocurrency Management //TODO
+### Cryptocurrency Management
 **Supported Cryptocurrencies:** The app support a wide range of tokens, because it is our concern that the user have the possibility and is not limited to a specific token. 
-**Wallet Features:** Describe the wallet functionalities, such as balance tracking, transaction history, etc.
 
-### User Interface & Experience //TODO
+### User Interface & Experience
 
 **Description:** The minimalist design of the app is intended to provide a seamless user experience.
-**Unique Design Elements:** Mention any unique or innovative design elements that enhance user interaction.
-
-### Security Measures //TODO
-
-**Description:** Detail the various security measures implemented in the app, such as two-factor authentication, encryption, etc.
-**Compliance and Certifications:** Mention any compliance with financial regulations or security certifications the app has achieved.
+**Unique Design Elements:** only 2 buttons to do everything!
 
 ### Development and Technical Details
 
