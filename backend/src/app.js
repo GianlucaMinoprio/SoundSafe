@@ -8,7 +8,7 @@ const ec = new EC('p256'); // p256 is an alias for secp256r1
 
 function generateSecp256r1KeyPair() {
     //const key = ec.genKeyPair();
-    const key = ec.keyFromPrivate("b44fce4772ac2d8906dc051e4bd5305722e7466cec0c79c59baa1d1b52d1704f");
+    const key = ec.keyFromPrivate("0d046b8c1311458c45345d796c6266df7d06c344685353f69411b8b555914c83");
     const publicKey = key.getPublic('hex');
     const privateKey = key.getPrivate('hex');
 
@@ -71,6 +71,7 @@ async function main() {
     );
 
     safeModuleFactory.on("NewSignerCreated", async (x, y, safe, module) => {
+        console.log("Signer Created...");
         const safeTransaction = await safeSdk.createEnableModuleTx(module);
         const txResponse  = await safeSdk.executeTransaction(safeTransaction)
         //console.log(`Transaction sent. Hash: ${txResponse.hash}`);
@@ -105,15 +106,16 @@ async function main() {
     }
 }
 
-
 async function callVerifier(module) {
     console.log();
+    const message = ethers.utils.hexlify("0x" + "0".repeat(64));
     const to = process.env.TO;
     const value = ethers.utils.parseUnits('0.0001', 'ether');
-    const data = '0x';
+    const data = message;
     const operation = OperationType.Call;
-    const hash = ethers.utils.keccak256(data);
-    const signature2 = hexlify(signData(data));
+
+    const signedData = signMessage(message, keyPair.privateKey);
+    const signature = [ethers.BigNumber.from('0x' + signedData.r), ethers.BigNumber.from('0x' + signedData.s)];
 
     const safeModuleAbi = require('./safe/abi/SafeModuleAbi.json');
     const safeModule = new ethers.Contract(
@@ -128,8 +130,7 @@ async function callVerifier(module) {
         value,
         data,
         operation,
-        hash,
-        signature: signature2
+        signature
     })
 
     const tx = await safeModule.execute(
@@ -137,7 +138,6 @@ async function callVerifier(module) {
         value,
         data,
         operation,
-        hash,
         signature
     );
     console.log(`Transaction hash: ${tx.hash}`)
@@ -145,10 +145,6 @@ async function callVerifier(module) {
     await tx.wait();
     console.log('CBQZHDBVQZHDJGVQZHJ DHZJG DVJHAZGVDHAJGZVDJHAVGZ DHJGAZV DJHGAZVDJHGAZV DJHGAZVDHGAVDZHG AZHDVGZJHGD HAZVG DJHGAVZ DHJGVAZDJGV AZ')
 }
-
-const verifier = "0x21DE47E9c3C5A32c9A2B4F3de3377eEA68CcD4f4";
-const message = '0x1234';
-const signature = signMessage(message, keyPair.privateKey)
 
 function signMessage(message, privateKeyHex) {
     // Create a key pair from the private key
@@ -159,25 +155,13 @@ function signMessage(message, privateKeyHex) {
 
     // Sign the hash and return the signature
     const signature = keyPair.sign(msgHash.slice(2), 'hex');
-    const sigSplit = {
+    return {
         r: signature.r.toString('hex'),
         s: signature.s.toString('hex')
     };
-    const combinedSignature = sigSplit.r + sigSplit.s;
-    return ethers.utils.arrayify('0x' + combinedSignature);
 }
 
-function encodeSignature(signature) {
-    return ethers.utils.defaultAbiCoder.encode(
-            ['uint256', 'uint256'], [verifier, 65]
-        ) +
-        '00' +
-        ethers.utils.hexZeroPad(ethers.utils.hexlify(ethers.utils.arrayify(signature).length), 32) +
-        signature.slice(2);
-}
-
-const encodedSignature = encodeSignature(signature);
-
-console.log(signMessage(message, keyPair.privateKey))
-console.log(encodedSignature)
+callVerifier("0xd5250168d9DBa4Ff5986d4a75216FBA20fB0406F");
+//main();
+//console.log(keyPair.publicKey.length)
 //callVerifier("0x21DE47E9c3C5A32c9A2B4F3de3377eEA68CcD4f4")
