@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, TextInput, Button, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, TextInput, Button, Text, TouchableOpacity, Image } from 'react-native';
 import { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
@@ -37,13 +37,14 @@ export const LoginScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>LogIn</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Name"
-        value={name}
-        onChangeText={setName}
+
+      <Image
+        source={require("../../assets/images/logo_circle.png")}
+        style={styles.avatarImage}
       />
+
+      <Text style={styles.title}>LogIn</Text>
+
       <TouchableOpacity style={styles.button} onPress={handleLogIn}>
         <Text style={styles.buttonText}>Go!</Text>
       </TouchableOpacity>
@@ -69,12 +70,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: colors.white, // Use mint as the background color
+    backgroundColor: colors.navy, // Use mint as the background color
   },
   title: {
     fontSize: 24,
     marginBottom: 20,
-    color: colors.navy, // Use navy for the title text
+    color: colors.white, // Use navy for the title text
   },
   input: {
     width: '80%',
@@ -97,6 +98,12 @@ const styles = StyleSheet.create({
     color: colors.white, // Use white for the button text
     fontSize: 18,
     fontWeight: 'bold',
+  },
+  avatarImage: {
+    width: 200, // Ajustez selon la taille souhaitée
+    height: 200, // Ajustez selon la taille souhaitée
+    borderRadius: 50, // Cela rendra l'image circulaire
+    marginBottom: 60, // Petit espace entre l'image et l'adresse
   },
 });
 

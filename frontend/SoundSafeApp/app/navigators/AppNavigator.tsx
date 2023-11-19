@@ -38,11 +38,12 @@ export type AppStackParamList = {
   Welcome: undefined
   Login: undefined // @demo remove-current-line
   Demo: NavigatorScreenParams<DemoTabParamList> // @demo remove-current-line
-  MainScreen: { name: string, addr: string }; 
+  MainScreen: { name: string, addr: string, selectedCurrency: string }; 
   Request: { name: string };
   SignUp: undefined;
   Pay: undefined;
   PayAddr: undefined;
+  CurrencySelectScreen: { name: string, addr: string };
   // 🔥 Your screens go here
   // IGNITE_GENERATOR_ANCHOR_APP_STACK_PARAM_LIST
 }
@@ -91,6 +92,7 @@ const AppStack = observer(function AppStack() {
       <Stack.Screen name="Request" component={Screens.RequestScreen} />
       <Stack.Screen name="Pay" component={Screens.PayScreen} />
       <Stack.Screen name="PayAddr" component={Screens.PayAddrScreen} />
+      <Stack.Screen name="CurrencySelectScreen" component={Screens.CurrencySelectScreen} />
 
       {/* IGNITE_GENERATOR_ANCHOR_APP_STACK_SCREENS */}
     </Stack.Navigator>

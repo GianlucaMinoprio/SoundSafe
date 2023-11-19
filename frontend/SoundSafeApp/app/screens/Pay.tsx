@@ -87,6 +87,8 @@ const styles = StyleSheet.create({
     borderRadius: 50, // Cela rendra l'image circulaire
     marginTop: 20, // Ajustez selon votre mise en page
     marginBottom: 30, // Petit espace entre l'image et l'adresse
+    borderWidth: 3, // L'épaisseur de la bordure
+    borderColor: 'black', // La couleur de la bordure
   },
   addrText: {
     fontSize: 16, // Ajustez selon la taille souhaitée

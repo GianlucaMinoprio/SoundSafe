@@ -47,7 +47,7 @@ export const SignUpScreen = () => {
 
     console.log(name); // Affiche le nom dans la console ou le sauvegarde comme nécessaire.
 
-    navigation.navigate('MainScreen', { name: name, addr: publicKey });
+    navigation.navigate('MainScreen', { name: name, addr: publicKey, selectedCurrency : "ethereum_icon" });
   };
   
     const handleGenerateKeyPair = async () => {

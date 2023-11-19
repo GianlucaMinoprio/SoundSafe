@@ -2,29 +2,120 @@ import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, TextInput, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
+import { useEffect } from 'react';
+
+import { Audio } from 'expo-av';
+import * as FileSystem from 'expo-file-system';
+import * as Permissions from 'expo-permissions';
 
 export const RequestScreen = () => {
   const [amount, setAmount] = useState(10);
 
-  const handleIncrement = () => setAmount(prevAmount => prevAmount + 1);
-  const handleDecrement = () => setAmount(prevAmount => Math.max(prevAmount - 1, 0));
+  const [textToEncode, setTextToEncode] = useState<string>("");
+
+  const currency = "USDT";
 
   
   const navigation = useNavigation<StackNavigationProp<any>>();
 
 
-  const addrSafe = "0x1HDTD536DHG36HD73HDY37DH378H83" 
+  const addrSafe = "0x62A81a211B75E46C83B3c7B50c14BafCc944F3f8" 
 
   const apiUrl = `https://api.dicebear.com/7.x/shapes/png?seed=${addrSafe}`;
 
+  const name = 'John Doe';
 
+  const [soundUri, setSoundUri] = useState<string | null>(null);
+  const [decodedText, setDecodedText] = useState('');
+  const [recording, setRecording] = useState<Audio.Recording | null>(null);
 
-  const handleRequest = () => {
-    // Implémentez la logique de demande ici
-    console.log(`Requesting $${amount}`);
+  useEffect(() => {
+    setTextToEncode(`${addrSafe},${name},${amount},${currency}`);
+  }, [amount]);
 
-    navigation.navigate('Pay');
+  useEffect(() => {
+    const requestPermissions = async () => {
+      const { status } = await Permissions.askAsync(Permissions.AUDIO_RECORDING);
+      if (status !== 'granted') {
+        console.error('Audio recording permission not granted');
+      }
+    };
 
+    requestPermissions();
+  }, []);
+
+  const encodeText = async () => {
+    try {
+      const protocolId = '5';
+      const volume = '20';
+      // Encode textToEncode pour l'insérer dans l'URL
+      const encodedText = encodeURIComponent(textToEncode);
+      // Construction de l'URL avec les paramètres
+      const url = `https://ggwave-to-file.ggerganov.com/?m=${encodedText}&p=${protocolId}&v=${volume}`;
+      // Effectuer la requête GET
+      const response = await fetch(url);
+      const blob = await response.blob();
+      // Convertir le Blob en base64
+      const reader = new FileReader();
+      reader.readAsDataURL(blob);
+      reader.onloadend = () => {
+        const base64Audio = reader.result;
+        const uri = FileSystem.documentDirectory + 'encodedAudioTest.wav';
+        // Extraire la partie base64 et écrire le fichier
+        const base64Data = base64Audio.split(',')[1];
+        FileSystem.writeAsStringAsync(uri, base64Data, { encoding: FileSystem.EncodingType.Base64 });
+        console.log('Text encoded successfully');
+        console.log('The uri is: ', uri);
+        setSoundUri(uri);
+        // const soundObject = new Audio.Sound();
+        // await soundObject.loadAsync({ uri });
+        // setSound(soundObject);
+      };
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  
+
+  const playEncodedSound = async () => {
+    const soundObject = new Audio.Sound();
+    try {
+      if (soundUri) {
+        // Disable microphone and set the speaker to be used
+        await Audio.setAudioModeAsync({
+          allowsRecordingIOS: false,
+          playsInSilentModeIOS: true,
+          playThroughEarpieceAndroid: false,  // Set to false to use the speaker
+        });
+
+        await soundObject.loadAsync({ uri: soundUri });
+        await soundObject.setVolumeAsync(1.0, 0);
+        console.log('The uri is: ', soundUri);
+        console.log('Playing sound');
+        await soundObject.playAsync();
+      } else {
+        console.log('No sound object is available to play.');
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleRequest = async () => {
+    try {
+
+      await encodeText();
+
+      for (let i = 0; i < 10; i++) {
+        await playEncodedSound();
+        await new Promise(resolve => setTimeout(resolve, 3700));
+        // Ajoutez un délai si nécessaire entre les lectures
+      }
+      // Après avoir joué le message 10 fois, naviguez vers 'Pay'
+      navigation.navigate('Pay');
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -40,13 +131,13 @@ export const RequestScreen = () => {
       <Text style={styles.header}>request</Text>
       
       <View style={styles.amountContainer}>
-        <TouchableOpacity onPress={handleDecrement} style={styles.changeAmountButton}>
+        <TouchableOpacity onPress={() => setAmount(prev => Math.max(0, prev - 1))} style={styles.changeAmountButton}>
           <Text style={styles.changeAmountButtonText}>-</Text>
         </TouchableOpacity>
 
         <Text style={styles.amount}>${amount}</Text>
         
-        <TouchableOpacity onPress={handleIncrement} style={styles.changeAmountButton}>
+        <TouchableOpacity onPress={() => setAmount(prev => prev + 1)} style={styles.changeAmountButton}>
           <Text style={styles.changeAmountButtonText}>+</Text>
         </TouchableOpacity>
       </View>
@@ -108,6 +199,8 @@ const styles = StyleSheet.create({
     borderRadius: 50, // Cela rendra l'image circulaire
     marginTop: 20, // Ajustez selon votre mise en page
     marginBottom: 30, // Petit espace entre l'image et l'adresse
+    borderWidth: 3, // L'épaisseur de la bordure
+    borderColor: 'black', // La couleur de la bordure
   },
   addrText: {
     fontSize: 16, // Ajustez selon la taille souhaitée
