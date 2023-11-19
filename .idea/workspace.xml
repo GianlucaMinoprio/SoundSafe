@@ -5,19 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2fe6f34b-21fa-4648-870b-9cc9ecd1e9d2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/contracts/swapContract.sol" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/CheckSwapModule.sol" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/OneInchContract.sol" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/OneInchContract.sol" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/deployModule.ts" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/deployModule.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/mode_swap.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/safeWalletDeploy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/types/contracts/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/types/contracts/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/types/factories/contracts/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/types/factories/contracts/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/types/hardhat.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/types/hardhat.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/types/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/types/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/swapWithModule.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/utils_Safe.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,23 +38,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "swap",
-    "last_opened_file_path": "/home/tayron/Desktop/tmp",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "ts.external.directory.path": "/home/tayron/Documents/SoundSafe/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;swap&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/tayron/Desktop/tmp&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/tayron/Documents/SoundSafe/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/artifacts/build-info" />
@@ -102,6 +91,11 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/hardhat.config.js" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

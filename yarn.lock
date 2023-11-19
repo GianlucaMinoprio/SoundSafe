@@ -5784,16 +5784,7 @@
     "es6-promise" "^4.2.8"
     "web3-core-helpers" "1.10.3"
 
-"web3-providers-ipc@^4.0.7":
-  "integrity" "sha512-YbNqY4zUvIaK2MHr1lQFE53/8t/ejHtJchrWn9zVbFMGXlTsOAbNoIoZWROrg1v+hCBvT2c9z8xt7e/+uz5p1g=="
-  "resolved" "https://registry.npmjs.org/web3-providers-ipc/-/web3-providers-ipc-4.0.7.tgz"
-  "version" "4.0.7"
-  dependencies:
-    "web3-errors" "^1.1.3"
-    "web3-types" "^1.3.0"
-    "web3-utils" "^4.0.7"
-
-"web3-providers-ipc@1.10.3":
+"web3-providers-ipc@^4.0.7", "web3-providers-ipc@1.10.3":
   "integrity" "sha512-vP5WIGT8FLnGRfswTxNs9rMfS1vCbMezj/zHbBe/zB9GauBRTYVrUo2H/hVrhLg8Ut7AbsKZ+tCJ4mAwpKi2hA=="
   "resolved" "https://registry.npmjs.org/web3-providers-ipc/-/web3-providers-ipc-1.10.3.tgz"
   "version" "1.10.3"
