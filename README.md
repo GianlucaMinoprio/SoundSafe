@@ -6,7 +6,11 @@ SoundSafe is an innovative mobile application designed to simplify and secure cr
 it is Sound Safe!
 ## Setup
 ### Prerequisites
-
+- XCode 15.0 / Sonoma
+- yarn / npm
+- Hardhat / Foundry
+- Node v18+
+- pip install ggwave
 
 ## Key Features
 
